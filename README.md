@@ -77,11 +77,3 @@ npm install
 npx playwright install chromium
 npm test
 ```
-
-## Contribuição
-
-Contribuições são bem-vindas! Siga o estilo de código e as diretrizes estabelecidas. Se encontrar algum problema ou tiver sugestões de melhoria, fique à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
