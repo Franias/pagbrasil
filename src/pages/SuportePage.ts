@@ -1,6 +1,7 @@
 import { Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 import { FORM_FIELD_IDS } from '../config/site';
+import opcoesSuporte from '../testdata/opcoesSuporte.json';
 import logger from '../utils/LoggerUtil';
 
 /**
@@ -15,6 +16,32 @@ import logger from '../utils/LoggerUtil';
 export class SuportePage extends BasePage {
   constructor(page: Page) {
     super(page, '/pt-br/suporte/');
+  }
+
+  private get options() {
+    return this.page.locator('.suporte-options .soporte-option');
+  }
+
+  /** Verifica que as opções de atendimento estão na página. */
+  async expectOptionsPresent(): Promise<void> {
+    for (const opcao of opcoesSuporte) {
+      await expect(this.page.locator(`#${opcao.id}`)).toBeAttached();
+    }
+    await expect(this.options).toHaveCount(opcoesSuporte.length);
+  }
+
+  /** Verifica que a opção de falar com um especialista está disponível. */
+  async expectSpecialistOptionPresent(): Promise<void> {
+    await expect(this.page.locator(`#${opcoesSuporte[0].id}`)).toBeAttached();
+  }
+
+  /** Verifica que o campo está configurado como obrigatório no formulário. */
+  async expectRequiredFieldConfigured(fieldLabel: string): Promise<void> {
+    const fieldName = FORM_FIELD_IDS[fieldLabel];
+    expect(fieldName, `Campo sem mapeamento: ${fieldLabel}`).toBeDefined();
+    await expect(
+      this.page.locator(`.lead-form-pt-step1 [name="${fieldName}"]`),
+    ).toHaveAttribute('aria-required', 'true');
   }
 
   private get specialistRadio() {
