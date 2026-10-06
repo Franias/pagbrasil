@@ -1,0 +1,5 @@
+{
+  "cities": ["Porto Alegre", "São Paulo", "Barcelona", "Singapura"],
+  "timelineClass": "timeline",
+  "timelineSectionClass": "block-quem-somos-timeline"
+}

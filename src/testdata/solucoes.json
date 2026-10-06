@@ -1,0 +1,4 @@
+{
+  "shouldSee": ["Gateway", "Pix Automático", "PagBrasil.JS", "PagBrasil Checkout"],
+  "shouldNotSee": ["PEC Flash", "Transferência Bancária"]
+}

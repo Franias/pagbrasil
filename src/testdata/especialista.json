@@ -1,0 +1,6 @@
+{
+  "option": "Fale com um especialista em pagamentos para e-commerce",
+  "whatsappLabel": "Deseja receber comunicações por WhatsApp?",
+  "requiredMessage": "Campo obrigatório",
+  "requiredFields": ["Nome", "Empresa", "E-mail corporativo", "Telefone"]
+}

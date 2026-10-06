@@ -10,9 +10,6 @@ Acceptance-test-playwright/
 ├── .github/
 │   └── workflows/
 │       └── pagbrasil-tests.yml
-├── acceptance-tests/
-│   ├── features/
-│   │   └── library-crud.feature
 │   ├── src/
 │   │   ├── mocks/
 │   │   ├── steps/
@@ -29,7 +26,6 @@ Acceptance-test-playwright/
 │   │       ├── mocks/
 │   │       ├── steps/
 │   │       └── support/
-│   ├── cucumber.js
 │   ├── package.json
 │   └── tsconfig.json
 ├── backend/
